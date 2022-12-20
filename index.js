@@ -9,6 +9,10 @@ app.use(require("./routes/record"));
 // get driver connection
 const dbo = require("./db/conn");
  
+app.get('/', (req, res) => {
+  res.send("<h1>Hello World</h1>")
+})
+
 
 app.listen(port, () => {
   // perform a database connection when server starts
@@ -19,6 +23,3 @@ app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
 
-app.get('/', (req, res) => {
-  res.send("<h1>Hello World</h1>")
-})
